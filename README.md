@@ -62,5 +62,3 @@ presto:public> select * from users where email='customer1dev@infoblox.com';
 ```
 
 There are also clients in [many different languages](https://prestodb.io/resources.html#libraries).
-
-:rabbit: :tophat: :sparkles:
