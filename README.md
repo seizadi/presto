@@ -56,9 +56,14 @@ SELECT * FROM <some_table>;
 You can do more advanced queries:
 ```sql
 presto:public> select * from users where email='customer1dev@infoblox.com';
- id |     name     | role | account_id | approved |            auth_token            |           email           |                      encrypted_password                      | r
+ id |     name     | role | tenant_id  | approved |            auth_token            |           email           |                      encrypted_password                      | r
 ----+--------------+------+------------+----------+----------------------------------+---------------------------+--------------------------------------------------------------+--
  41 | Customer Dev |    1 |         23 | true     | a420f3cc7609495abcd2e4bf989925dd | customer1dev@infoblox.com | $2a$10$rzXabclq8IyxHmEF9zBaa.h8RYKDBEt.3cjKSF3BgEkhvB4lmlQ42 | ....
 ```
 
+If the use case is to expose the base Presto connector to end users it will not work for multi-tenancy. As you see the Presto SQL client gets full access to the underlying Table and will see data that is segmented by tenant_id.
+
+The [postgres connector implementation is found in Presto Github](https://github.com/prestodb/presto/tree/master/presto-postgresql).
+
+### Client Libraries
 There are also clients in [many different languages](https://prestodb.io/resources.html#libraries).
