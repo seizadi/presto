@@ -44,13 +44,13 @@ presto --catalog postgres --schema public
 And run:
 
 ```sql
-SHOW TABLES;
+show tables;
 ```
 
 Try one of your tables with:
 
 ```sql
-SELECT * FROM <some_table>;
+select * from <some_table>;
 ```
 
 You can do more advanced queries:
@@ -67,3 +67,7 @@ The [postgres connector implementation is found in Presto Github](https://github
 
 ### Client Libraries
 There are also clients in [many different languages](https://prestodb.io/resources.html#libraries).
+
+## References
+[Apache Presto Tutorial](https://www.tutorialspoint.com/apache_presto/apache_presto_quick_guide.htm)
+
