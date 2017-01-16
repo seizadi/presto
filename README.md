@@ -64,6 +64,7 @@ presto:public> select * from users where email='customer1dev@infoblox.com';
 If the use case is to expose the base Presto connector to end users it will not work for multi-tenancy. As you see the Presto SQL client gets full access to the underlying Table and will see data that is segmented by tenant_id.
 
 The [postgres connector implementation is found in Presto Github](https://github.com/prestodb/presto/tree/master/presto-postgresql).
+The Postgres connector extends [BaseJdbcClient class which has the bulk of implementation in Presto Github](https://github.com/prestodb/presto/blob/f4884849f646148f3deebd0d4f3549c9124dcb9f/presto-base-jdbc/src/main/java/com/facebook/presto/plugin/jdbc/BaseJdbcClient.java)
 
 ### Client Libraries
 There are also clients in [many different languages](https://prestodb.io/resources.html#libraries).
